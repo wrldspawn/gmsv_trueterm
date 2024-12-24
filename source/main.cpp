@@ -135,7 +135,7 @@ SpewRetval_t TruetermSpew(SpewType_t Type, const char *msg) {
 
 GMOD_MODULE_OPEN() {
 #if ARCHITECTURE_IS_X86_64
-  LoggingSystem_PushLoggingState(false, false);
+  LoggingSystem_PushLoggingState(false, true);
   LoggingSystem_RegisterLoggingListener(listener);
 #else
   spewFunction = GetSpewOutputFunc();
