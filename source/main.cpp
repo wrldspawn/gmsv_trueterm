@@ -6,7 +6,6 @@
 #include <GarrysMod/Lua/Interface.h>
 #include <Platform.hpp>
 #include <color.h>
-#include <eiface.h>
 #include <tier0/dbg.h>
 
 #if ARCHITECTURE_IS_X86_64
@@ -33,9 +32,9 @@ public:
   TruetermListener(const bQuietPrintf = false, bool bQuietDebugger = false) {}
 
   void Log(const LoggingContext_t *pContext, const char *msg) override {
-    int RED = pContext->m_Color.r;
-    int GREEN = pContext->m_Color.g;
-    int BLUE = pContext->m_Color.b;
+    int RED = pContext->m_Color.r();
+    int GREEN = pContext->m_Color.g();
+    int BLUE = pContext->m_Color.b();
 
     const LoggingSeverity_t Type = pContext->m_Severity;
 
