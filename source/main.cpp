@@ -29,7 +29,7 @@ void RecolorMsg(int &RED, int &GREEN, int &BLUE) {
 #if ARCHITECTURE_IS_X86_64
 class TruetermListener : public ILoggingListener {
 public:
-  TruetermListener(const bQuietPrintf = false, bool bQuietDebugger = false) {}
+  TruetermListener(bool bQuietPrintf = false, bool bQuietDebugger = false) {}
 
   void Log(const LoggingContext_t *pContext, const char *msg) override {
     int RED = pContext->m_Color.r();
