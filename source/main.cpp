@@ -123,7 +123,7 @@ SpewRetval_t TruetermSpew(SpewType_t Type, const char *msg) {
   }
 
   char buf[20] = "";
-  snprintf(buf, sizeof(buf), "\x1b[38;2;%03d;%03d;%03dm", r, g, b);
+  snprintf(buf, sizeof(buf), "\x1b[38;2;%03d;%03d;%03dm", RED, GREEN, BLUE);
 
   spewFunction(Type, buf);
   spewFunction(Type, msg);
