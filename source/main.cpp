@@ -133,20 +133,17 @@ SpewRetval_t TruetermSpew(SpewType_t Type, const char *msg) {
 }
 #endif
 
-GMOD_MODULE_OPEN() {
+void SetupListener() {
 #if ARCHITECTURE_IS_X86_64
   LoggingSystem_PushLoggingState(false, true);
   LoggingSystem_RegisterLoggingListener(listener);
 #else
   spewFunction = GetSpewOutputFunc();
   SpewOutputFunc(TruetermSpew);
-
 #endif
-
-  return 0;
 }
 
-GMOD_MODULE_CLOSE() {
+void DestroyListener() {
 #if ARCHITECTURE_IS_X86_64
   LoggingSystem_UnregisterLoggingListener(listener);
   LoggingSystem_PopLoggingState(false);
@@ -154,6 +151,4 @@ GMOD_MODULE_CLOSE() {
 #else
   SpewOutputFunc(spewFunction);
 #endif
-
-  return 0;
 }
