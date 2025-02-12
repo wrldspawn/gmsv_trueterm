@@ -1,3 +1,5 @@
+# [This module is irrelevant now](https://github.com/Facepunch/garrysmod-issues/issues/6174)
+
 # gmsv_trueterm
 Truecolor terminal output for Garry's Mod Linux dedicated servers.
 
